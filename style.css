@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+#layout1Q{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    padding: 3px;
+    margin-top: 20px;
+}
+.textarea-container{
+    width: 80%;
+    padding: 20px;
+    border: 1px solid black;
+}
+#layout1A1, #layout1A2, #layout1A3, #layout1A4{
+    width: 22%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    margin:0 5px 0 5px;
+}
+#layout2A1, #layout2A2, #layout2A3, #layout2A4{
+    width: 95%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    padding: 3px;
+    margin: 0px 0px 0px 10px;
+}
+
+#layout3A1, #layout3A2, #layout3A3, #layout3A4{
+    width: 95%;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    padding: 3px;
+    margin: 0px;
+}
+#QImg{
+    width: 95%;
+    padding: 3px;
+    margin: 0px 0px 0px 10px;
+}
+
+
+textarea:placeholder-shown{
+    border: 1px dashed black;
+    border-radius: 3px;
+    padding-left:5px; /* Style when no text is present */
+}
+#layout1Q:placeholder-shown{
+    border: 2px solid black;
+    border-radius: 3px;
+    padding-left:5px;
+}
+textarea:not(:placeholder-shown) {
+    border: none;
+    outline: none; /* Style when text is present */
+}
