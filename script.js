@@ -139,3 +139,80 @@ function autoResize() {
 };
 
 
+
+document.addEventListener("keydown", event => {
+    if(event.key == "Delete"){
+        if(event.target.id == "addTextareaBtn1" | event.target.id == "addTextareaBtn2" | event.target.id== "addTextareaBtn3" | event.target.id == "mainContainer" | event.target.id == "textareaContainer"){
+            
+        }
+        else{
+            event.target.remove()      
+        }
+                   
+    }
+});
+/*document.addEventListener("mouseover", event => {
+    console.log(event);
+})*/
+function Export2Word(element, filename = ''){
+    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var postHtml = "</body></html>";
+    const textareaInputs = document.querySelectorAll("textarea").text;
+    var html = preHtml+document.getElementById("textareaContainer").innerHTML+postHtml;
+    
+
+    var blob = new Blob(['\ufeff', html], {
+        type: 'application/msword'
+    });
+    
+    // Specify link url
+    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    
+    // Specify file name
+    filename = filename?filename+'.doc':'document.doc';
+    
+    // Create download link element
+    var downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob ){
+        navigator.msSaveOrOpenBlob(blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = url;
+        
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+    
+    document.body.removeChild(downloadLink);
+}
+function exportToWord() {
+    var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+                 "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+                 "xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML to Word</title></head><body>";
+    var footer = "</body></html>";
+    var sourceHTML = header + document.getElementById("textareaContainer").innerHTML + footer;
+
+    var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+    var fileDownload = document.createElement("a");
+    document.body.appendChild(fileDownload);
+    fileDownload.href = source;
+    fileDownload.download = 'document.doc';
+    fileDownload.click();
+    document.body.removeChild(fileDownload);
+}
+
+function removeInput() {
+    const inputs = document.getElementById('textarea');
+    inputs.foreach(input => {
+        const textNode = document.createTextNode(input.value);
+        input.parentNode.replaceChild(textNode, input);
+    });
+}
+
+

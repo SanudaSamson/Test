@@ -47,8 +47,6 @@
     padding: 3px;
     margin: 0px 0px 0px 10px;
 }
-
-
 textarea:placeholder-shown{
     border: 1px dashed black;
     border-radius: 3px;
@@ -62,4 +60,11 @@ textarea:placeholder-shown{
 textarea:not(:placeholder-shown) {
     border: none;
     outline: none; /* Style when text is present */
+}
+ul{
+    display: flex;
+    
+}
+li{
+    margin: 100px;
 }
