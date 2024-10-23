@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MCQ Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <center><h1 class="topic">MCQ Builder</h1></center>
+  <div class="btnContainer">
+    <button onclick="CreateTable()">Layout 1</button>
+    <button onclick="CreateTable1()">Layout 2</button>
+    <button onclick="Export2Word('textareaContainer', 'Word-MCQ-Builder.docx');"  class="save-btn">Export as .docx<i class="fa-solid fa-download"></i></button>
+    
+  </div>
+  <div id="container">
+    <table id="fetch" border="0">
+
+    </table>
+  </div>    
+    <div id="subContainer">
+      <i class="fa-light fa-circle-plus"></i>
+      <h1>Press Layout 1 or Layout 2.</h1>
+      <h1>Your content will add here.</h1>
+    </div>
+    
+    
+    
+    
+</body>
+</html>
